@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    margin: 40px 80px;
+    height: 550px;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    background:white;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.visual{
+    height: 180px;
+    width: 100%;
+    background: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location, .temperature, .humidity{
+    color: white;
+    font-size: 24px;
+}
+
+.card{
+    background:turquoise;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    min-width: 250px;
+}
+
+h3{
+    text-align: center;
+    margin: 0;
+    font-size: 34px;
+}
+
+.heading{
+    height: 12vh;
+    width: 100%;
+    background: rgb(97, 192, 209);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}

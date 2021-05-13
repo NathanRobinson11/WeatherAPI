@@ -1,0 +1,55 @@
+<h1 class="heading">Weather App Activity</h1>
+     {{!--
+     action = location on server
+     method = type of request / post or request
+       --}}
+
+    <form action="/" method="POST">
+        <input type="text" name="city" placeholder="Enter Your City">
+        <input type="text" name="countryCode" placeholder="Enter Your Country">
+        <button type="submit">Submit</button>
+    </form>
+
+    {{#if data.message}}
+    <div id="top-header">
+        <h1>Invalid Search Parameter</h1>
+    </div>
+    {{/if}}
+
+    <div class="parent">
+        <div class="card">
+            <h3>Location</h3>
+            <p class="text">The information provided is specific to the region listed below.</p>
+            <div class="visual">
+                <p class="location">{{data.name}}</p>
+                {{!-- <p class="location">{{data.sys.country}}</p> --}}
+            </div>
+        </div>
+        <div class="card">
+            <h3>Temperature</h3>
+            <p class="text">Displayed in celsius, we are using the metric unit of measurement used in the local region</p>
+            <div class="visual">
+                {{#if data.message}}
+                <p class="temperature">Invalid Input</p>
+                {{else}}
+                <p class="temperature">{{data.main.temp}} °C</p>
+                {{/if}}
+    
+            </div>
+        </div> 
+        <div class="card">
+            <h3>Humidity</h3>
+            <p class="text">The concentration of water vapour present in the air</p>
+            <div class="visual">
+                {{#if data.message}}
+                <p class="humidity">Invalid Input</p>
+                {{else}}
+                <p class="humidity">{{data.main.humidity}} %</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+
+{{log data.name}}
+{{log data.main.temp}}
